@@ -11,8 +11,10 @@ public class EnemyAI : MonoBehaviour
     private Rigidbody _rigidbody;
 
     public UnityAction<Vector3> OnDirectionChanged = null;
+    public UnityAction<float> OnDisabled;
 
     public Vector3 Direction { get; private set; }
+    public bool IsDisabled { get; private set; }
 
     private void Start()
     {
@@ -35,9 +37,20 @@ public class EnemyAI : MonoBehaviour
         Move();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.TryGetComponent<SelfDestroyer>(out SelfDestroyer selfDestroyer))
+        {
+            StartCoroutine(Disabled());
+        }
+    }
+
     private void Move()
     {
-        _rigidbody.MovePosition(transform.position + Direction * _movementSpeed * Time.deltaTime);
+        if (IsDisabled == false)
+        {
+            _rigidbody.MovePosition(transform.position + Direction * _movementSpeed * Time.deltaTime);
+        }
     }
 
     private void ChangeDirection()
@@ -63,6 +76,7 @@ public class EnemyAI : MonoBehaviour
         }
 
         OnDirectionChanged?.Invoke(Direction);
+        
     }
 
     private IEnumerator DirectionChanger()
@@ -75,5 +89,19 @@ public class EnemyAI : MonoBehaviour
 
             yield return time;
         }
+    }
+
+    private IEnumerator Disabled()
+    {
+        float time = 2f;
+        var timeReturn = new WaitForSeconds(time);
+
+        OnDisabled?.Invoke(time);
+
+        IsDisabled = true;
+
+        yield return time;
+
+        IsDisabled = false;
     }
 }
