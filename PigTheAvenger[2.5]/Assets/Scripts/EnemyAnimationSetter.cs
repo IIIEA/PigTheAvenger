@@ -34,10 +34,10 @@ public class EnemyAnimationSetter : MonoBehaviour
 
     private IEnumerator Disable(float time)
     {
-        _animator.SetTrigger("Disable");
+        _animator.SetBool("Disabled", true);
 
         yield return new WaitForSeconds(time);
 
-        _animator.ResetTrigger("Disable");
+        _animator.SetBool("Disabled", false);
     }
 }

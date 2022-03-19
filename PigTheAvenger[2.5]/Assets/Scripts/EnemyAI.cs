@@ -9,12 +9,13 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float _movementSpeed;
     [SerializeField] private float _timeToChangeDirection;
     private Rigidbody _rigidbody;
+    [SerializeField] private bool _isDisabled;
 
     public UnityAction<Vector3> OnDirectionChanged = null;
     public UnityAction<float> OnDisabled;
 
     public Vector3 Direction { get; private set; }
-    public bool IsDisabled { get; private set; }
+    public bool IsDisabled => _isDisabled;
 
     private void Start()
     {
@@ -34,6 +35,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Update()
     {
+
         Move();
     }
 
@@ -47,7 +49,7 @@ public class EnemyAI : MonoBehaviour
 
     private void Move()
     {
-        if (IsDisabled == false)
+        if (_isDisabled == false)
         {
             _rigidbody.MovePosition(transform.position + Direction * _movementSpeed * Time.deltaTime);
         }
@@ -75,8 +77,7 @@ public class EnemyAI : MonoBehaviour
                 break;
         }
 
-        OnDirectionChanged?.Invoke(Direction);
-        
+        OnDirectionChanged?.Invoke(Direction);     
     }
 
     private IEnumerator DirectionChanger()
@@ -96,12 +97,14 @@ public class EnemyAI : MonoBehaviour
         float time = 2f;
         var timeReturn = new WaitForSeconds(time);
 
+        _isDisabled = true;
+
+        _rigidbody.velocity = Vector3.zero;
+
         OnDisabled?.Invoke(time);
 
-        IsDisabled = true;
+        yield return timeReturn;
 
-        yield return time;
-
-        IsDisabled = false;
+        _isDisabled = false;
     }
 }

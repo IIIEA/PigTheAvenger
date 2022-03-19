@@ -21,10 +21,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 676, y: 492}
+  m_MinSize: {x: 677, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 140
+  controlID: 136
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -81,7 +81,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 1
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -94,18 +94,18 @@ MonoBehaviour:
       y: 21
       width: 836
       height: 315
-    m_Scale: {x: 0.30096376, y: 0.30096376}
-    m_Translation: {x: 418, y: 158.49484}
+    m_Scale: {x: 0.29166666, y: 0.29166666}
+    m_Translation: {x: 418, y: 157.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1388.8716
-      y: -526.6243
-      width: 2777.7432
-      height: 1046.6377
+      x: -1433.143
+      y: -540
+      width: 2866.286
+      height: 1080
     m_MinimalGUI: 1
   m_defaultScale: 0.29166666
   m_LastWindowPixelSize: {x: 836, y: 336}
@@ -135,10 +135,10 @@ MonoBehaviour:
     y: 0
     width: 1039
     height: 635
-  m_MinSize: {x: 401, y: 492}
+  m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 94
+  controlID: 91
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -160,10 +160,10 @@ MonoBehaviour:
     y: 0
     width: 1039
     height: 357
-  m_MinSize: {x: 401, y: 221}
-  m_MaxSize: {x: 8001, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 70
+  controlID: 45
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -271,7 +271,7 @@ MonoBehaviour:
   - {fileID: 2}
   - {fileID: 9}
   m_Selected: 1
-  m_LastSelected: 0
+  m_LastSelected: 2
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -469,14 +469,14 @@ MonoBehaviour:
       e31: 0
       e32: 0
       e33: 1
-    - e00: 0.79410523
+    - e00: 0.6905263
       e01: 0
       e02: 0
-      e03: 62.444736
+      e03: -19.526306
       e10: 0
-      e11: 0.79410523
+      e11: 0.6905263
       e12: 0
-      e13: 53.98501
+      e13: 82.9
       e20: 0
       e21: 0
       e22: 1
@@ -502,9 +502,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: fce5ae53d55a191469b94c1ed3ecb2a7, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: fdad8d17ce09f464ca8372847309b107, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: 1649986907347874377, guid: fce5ae53d55a191469b94c1ed3ecb2a7, type: 2}
+  - m_Target: {fileID: 306440904602531319, guid: fdad8d17ce09f464ca8372847309b107, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -582,21 +582,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Asus\Documents\GitHub\PigTheAvenger\PigTheAvenger[2.5]
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b25b0000
-    m_LastClickedID: 23474
+    scrollPos: {x: 0, y: 103}
+    m_SelectedIDs: ba5b0000
+    m_LastClickedID: 23482
     m_ExpandedIDs: 00000000705b0000725b0000745b0000765b0000785b00007a5b00007c5b00007e5b0000805b0000825b0000845b0000a25b000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -650,8 +650,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
+    m_SelectedInstanceIDs: 025b0000
+    m_LastClickedInstanceID: 23298
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000245100002a510000000000005c9400006094000064940000
     m_RenameOverlay:
@@ -763,7 +763,7 @@ MonoBehaviour:
     m_CachedPref: 160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
+  m_LastInspectedObjectInstanceID: 23298
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_LockTracker:
