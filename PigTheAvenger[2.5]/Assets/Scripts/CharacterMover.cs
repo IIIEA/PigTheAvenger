@@ -1,6 +1,4 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(InputHandler))]
@@ -10,8 +8,12 @@ public class CharacterMover : MonoBehaviour
 
     private InputHandler _input;
 
+    private float _currentSpeed;
+    private float _slowDowndSpeed => _speed / 2;
+
     private void Awake()
     {
+        _currentSpeed = _speed;
         _input = GetComponent<InputHandler>();
     }
 
@@ -22,9 +24,26 @@ public class CharacterMover : MonoBehaviour
         MoveTowardTarget(targetVector);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.TryGetComponent<SelfDestroyer>(out SelfDestroyer selfDestroyer))
+        {
+            StartCoroutine(SlowDown());
+        }
+    }
+
     private void MoveTowardTarget(Vector3 targetVector)
     {
-        var speed = _speed * Time.deltaTime;
+        var speed = _currentSpeed * Time.deltaTime;
         transform.Translate(targetVector * speed);
+    }
+
+    private IEnumerator SlowDown()
+    {
+        _currentSpeed = _slowDowndSpeed;
+
+        yield return new WaitForSeconds(2f);
+
+        _currentSpeed = _speed;
     }
 }

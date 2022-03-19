@@ -13,6 +13,7 @@ ScriptsOnlyBuild:
     - InputHandler
     - Part
     - PlayerAnimationSetter
+    - SelfDestroyer
     - StyleHolder
     - TapHandlerJoystick
     - TreeControll
@@ -174,85 +175,87 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3404}
     - Class: 114
-      Script: {instanceID: 3488}
+      Script: {instanceID: 3460}
     - Class: 114
-      Script: {instanceID: 3518}
+      Script: {instanceID: 3490}
     - Class: 114
-      Script: {instanceID: 3774}
+      Script: {instanceID: 3520}
     - Class: 114
-      Script: {instanceID: 3874}
+      Script: {instanceID: 3776}
     - Class: 114
-      Script: {instanceID: 4020}
+      Script: {instanceID: 3876}
     - Class: 114
-      Script: {instanceID: 4158}
+      Script: {instanceID: 4022}
     - Class: 114
-      Script: {instanceID: 4294}
+      Script: {instanceID: 4160}
     - Class: 114
-      Script: {instanceID: 4324}
+      Script: {instanceID: 4296}
     - Class: 114
-      Script: {instanceID: 4400}
+      Script: {instanceID: 4326}
     - Class: 114
-      Script: {instanceID: 4594}
+      Script: {instanceID: 4402}
     - Class: 114
-      Script: {instanceID: 4746}
+      Script: {instanceID: 4596}
     - Class: 114
-      Script: {instanceID: 4846}
+      Script: {instanceID: 4748}
     - Class: 114
-      Script: {instanceID: 4920}
+      Script: {instanceID: 4848}
     - Class: 114
-      Script: {instanceID: 4938}
+      Script: {instanceID: 4922}
     - Class: 114
-      Script: {instanceID: 4988}
+      Script: {instanceID: 4940}
     - Class: 114
-      Script: {instanceID: 5160}
+      Script: {instanceID: 4990}
     - Class: 114
       Script: {instanceID: 5162}
     - Class: 114
-      Script: {instanceID: 5182}
+      Script: {instanceID: 5164}
     - Class: 114
-      Script: {instanceID: 5414}
+      Script: {instanceID: 5184}
     - Class: 114
-      Script: {instanceID: 5504}
+      Script: {instanceID: 5416}
     - Class: 114
-      Script: {instanceID: 5542}
+      Script: {instanceID: 5506}
     - Class: 114
-      Script: {instanceID: 5664}
+      Script: {instanceID: 5544}
     - Class: 114
-      Script: {instanceID: 5742}
+      Script: {instanceID: 5666}
     - Class: 114
-      Script: {instanceID: 5748}
+      Script: {instanceID: 5744}
     - Class: 114
-      Script: {instanceID: 5836}
+      Script: {instanceID: 5750}
     - Class: 114
       Script: {instanceID: 5838}
     - Class: 114
-      Script: {instanceID: 5874}
+      Script: {instanceID: 5840}
     - Class: 114
-      Script: {instanceID: 5892}
+      Script: {instanceID: 5876}
     - Class: 114
-      Script: {instanceID: 5916}
+      Script: {instanceID: 5894}
     - Class: 114
-      Script: {instanceID: 5982}
+      Script: {instanceID: 5918}
     - Class: 114
-      Script: {instanceID: 5992}
+      Script: {instanceID: 5984}
     - Class: 114
-      Script: {instanceID: 6086}
+      Script: {instanceID: 5994}
     - Class: 114
-      Script: {instanceID: 6212}
+      Script: {instanceID: 6088}
     - Class: 114
-      Script: {instanceID: 6308}
+      Script: {instanceID: 6214}
     - Class: 114
-      Script: {instanceID: 6320}
+      Script: {instanceID: 6310}
     - Class: 114
-      Script: {instanceID: 6362}
+      Script: {instanceID: 6322}
     - Class: 114
-      Script: {instanceID: 6898}
+      Script: {instanceID: 6364}
     - Class: 114
-      Script: {instanceID: 7176}
+      Script: {instanceID: 6900}
     - Class: 114
-      Script: {instanceID: 7316}
+      Script: {instanceID: 7178}
     - Class: 114
-      Script: {instanceID: 7406}
+      Script: {instanceID: 7318}
+    - Class: 114
+      Script: {instanceID: 7408}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -264,6 +267,10 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
       Script: {instanceID: 0}
     - Class: 212
       Script: {instanceID: 0}
@@ -354,7 +361,7 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 948ebfcdca9bd5639f5234b1d44335bd
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bomb
@@ -558,7 +565,7 @@ ScriptsOnlyBuild:
     className: TubeGenerator
   - hash:
       serializedVersion: 2
-      Hash: 08e9ecdadee0a072902346edad6effcb
+      Hash: 3e0a89da36508386c9588405bce55430
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: EnemyAI
@@ -724,6 +731,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: aa5c294b65a9667900db15308bc3a423
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SelfDestroyer
   - hash:
       serializedVersion: 2
       Hash: 5e1eefcd5106de6c2e85908a3b2d3f04
@@ -1531,4 +1544,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/Asus/Desktop/pigminer.apk
+  playerPath: C:/Users/Asus/Desktop/PigTheAvenger.apk

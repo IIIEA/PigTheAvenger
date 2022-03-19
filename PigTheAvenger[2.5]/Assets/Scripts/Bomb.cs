@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Bomb : MonoBehaviour
 {
-    public GameObject explosionPrefab;
+    [SerializeField] private GameObject _explosionPrefab;
 
-    private bool exploded = false;
+    private bool _exploded = false;
 
     void Start()
     {
@@ -14,7 +14,7 @@ public class Bomb : MonoBehaviour
 
     void Explode()
     {
-        Instantiate(explosionPrefab, transform.position, Quaternion.identity);
+        Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
 
         StartCoroutine(CreateExplosions(Vector3.forward));
         StartCoroutine(CreateExplosions(Vector3.right));
@@ -22,13 +22,13 @@ public class Bomb : MonoBehaviour
         StartCoroutine(CreateExplosions(Vector3.left));
 
         GetComponentInChildren<SpriteRenderer>().enabled = false;
-        exploded = true;
+        _exploded = true;
         Destroy(gameObject, .3f);
     }
 
     public void OnTriggerEnter(Collider other)
     {
-        if (!exploded && other.CompareTag("Explosion"))
+        if (!_exploded && other.TryGetComponent<SelfDestroyer>(out SelfDestroyer selfDestroyer))
         {
             CancelInvoke("Explode");
             Explode();
@@ -45,7 +45,7 @@ public class Bomb : MonoBehaviour
 
             if (!hit.collider)
             {
-                Instantiate(explosionPrefab, transform.position + (i * direction), explosionPrefab.transform.rotation);
+                Instantiate(_explosionPrefab, transform.position + (i * direction), _explosionPrefab.transform.rotation);
             }
 
             yield return new WaitForSeconds(.05f);
